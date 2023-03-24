@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="utf-8"?>
+<search>
+  <entry>
+    <title>Github搭博客</title>
+    <url>/Blog.github.io/2023/03/24/Github%E6%90%AD%E5%8D%9A%E5%AE%A2/</url>
+    <content><![CDATA[<h3 id="参考文章"><a href="#参考文章" class="headerlink" title="参考文章"></a>参考文章</h3><blockquote>
+<p><a href="https://zhuanlan.zhihu.com/p/60578464">参考文章1</a></p>
+<p><a href="https://wushishu.xyz/post/be8880ea.html">参考文章2</a></p>
+</blockquote>
+<h3 id="安装和配置Node-js"><a href="#安装和配置Node-js" class="headerlink" title="安装和配置Node.js"></a>安装和配置<code>Node.js</code></h3><p><a href="https://blog.csdn.net/weixin_52799373/article/details/123840137">参考文章</a></p>
+<h3 id="安装和配置Git"><a href="#安装和配置Git" class="headerlink" title="安装和配置Git"></a>安装和配置<code>Git</code></h3><ol>
+<li>生成<code>SSH Keys</code></li>
+</ol>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">ssh-keygen -t rsa -C &quot;你的邮箱地址&quot;</span><br></pre></td></tr></table></figure>
+
+<ol start="2">
+<li>测试<code>ssh</code>是否绑定成功</li>
+</ol>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">ssh -T git@github.com</span><br></pre></td></tr></table></figure>
+
+<p>第一次执行命令，需要输入一次<code>yes</code>。</p>
+<h3 id="本地创建和访问博客"><a href="#本地创建和访问博客" class="headerlink" title="本地创建和访问博客"></a>本地创建和访问博客</h3><ol>
+<li>创建一个名为<code>Blog</code>的文件夹，在文件夹内部使用<code>Git Bash Here</code></li>
+<li>初始化<code>hexo</code></li>
+</ol>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">hexo init</span><br></pre></td></tr></table></figure>
+
+<ol start="3">
+<li>生成本地<code>hexo</code>页面</li>
+</ol>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">hexo s</span><br></pre></td></tr></table></figure>
+
+<ol start="4">
+<li>访问</li>
+</ol>
+<p>打开本地服务器</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">http://localhost:4000/</span><br></pre></td></tr></table></figure>
+
+<h3 id="上传到Github"><a href="#上传到Github" class="headerlink" title="上传到Github"></a>上传到<code>Github</code></h3><ol>
+<li>修改<code>_config.yml</code></li>
+</ol>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line"># 第一步，修改url</span><br><span class="line">url: https://c210809.github.io/Blog.github.io/</span><br><span class="line"># 第二步，修改deploy</span><br><span class="line">deploy:</span><br><span class="line">  type: git</span><br><span class="line">  repository: 你的github地址</span><br><span class="line">  branch: main</span><br></pre></td></tr></table></figure>
+
+<ol start="2">
+<li>安装<code>hexo-deployer-git</code>自动部署发布工具</li>
+</ol>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">npm install hexo-deployer-git --save</span><br></pre></td></tr></table></figure>
+
+<ol start="3">
+<li>生成页面</li>
+</ol>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">hexo g</span><br></pre></td></tr></table></figure>
+
+<ol start="4">
+<li>本地文件上传到<code>Github</code>上</li>
+</ol>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">hexo d</span><br></pre></td></tr></table></figure>
+
+<p>如果出现网络错误，多次尝试。</p>
+<h3 id="配置"><a href="#配置" class="headerlink" title="配置"></a>配置</h3><h4 id="安装NexT主题"><a href="#安装NexT主题" class="headerlink" title="安装NexT主题"></a>安装NexT主题</h4><p>参考<a href="https://theme-next.js.org/docs/getting-started/">官方文档</a>。</p>
+<h4 id="创建新的页面"><a href="#创建新的页面" class="headerlink" title="创建新的页面"></a>创建新的页面</h4>]]></content>
+      <tags>
+        <tag>博客</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Hello World</title>
+    <url>/Blog.github.io/2023/03/24/hello-world/</url>
+    <content><![CDATA[<figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> std;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">main</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    <span class="type">int</span> a, b;</span><br><span class="line">    cin &gt;&gt; a &gt;&gt; b;</span><br><span class="line">    cout &lt;&lt; a + b &lt;&lt; endl;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+]]></content>
+  </entry>
+</search>
