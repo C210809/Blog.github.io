@@ -8,6 +8,8 @@
 <p><a href="https://wushishu.xyz/post/be8880ea.html">参考文章2</a></p>
 </blockquote>
 <h3 id="安装和配置Node-js"><a href="#安装和配置Node-js" class="headerlink" title="安装和配置Node.js"></a>安装和配置<code>Node.js</code></h3><p><a href="https://blog.csdn.net/weixin_52799373/article/details/123840137">参考文章</a></p>
+<span id="more"></span>
+
 <h3 id="安装和配置Git"><a href="#安装和配置Git" class="headerlink" title="安装和配置Git"></a>安装和配置<code>Git</code></h3><ol>
 <li>生成<code>SSH Keys</code></li>
 </ol>
@@ -57,8 +59,7 @@
 <figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">hexo d</span><br></pre></td></tr></table></figure>
 
 <p>如果出现网络错误，多次尝试。</p>
-<h3 id="配置"><a href="#配置" class="headerlink" title="配置"></a>配置</h3><h4 id="安装NexT主题"><a href="#安装NexT主题" class="headerlink" title="安装NexT主题"></a>安装NexT主题</h4><p>参考<a href="https://theme-next.js.org/docs/getting-started/">官方文档</a>。</p>
-<h4 id="添加标签页面"><a href="#添加标签页面" class="headerlink" title="添加标签页面"></a>添加标签页面</h4><ol>
+<h3 id="配置"><a href="#配置" class="headerlink" title="配置"></a>配置</h3><h4 id="添加标签页面"><a href="#添加标签页面" class="headerlink" title="添加标签页面"></a>添加标签页面</h4><ol>
 <li>先进入主题文件夹下，在主题配置文件中修改配置文件（<code>_config.yml</code>）</li>
 </ol>
 <p>添加标签页面。</p>
