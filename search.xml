@@ -3,14 +3,59 @@
   <entry>
     <title>CF_1155D</title>
     <url>/Blog.github.io/2023/05/07/CF-1155D/</url>
-    <content><![CDATA[<p>题目链接：<a href="https://vjudge.net/problem/CodeForces-1155D#author=0">CF1155D</a></p>
+    <content><![CDATA[<h3 id="题目链接"><a href="#题目链接" class="headerlink" title="题目链接"></a>题目链接</h3><p><a href="https://vjudge.net/problem/CodeForces-1155D#author=0">CF1155D</a></p>
+<h3 id="题目大意"><a href="#题目大意" class="headerlink" title="题目大意"></a>题目大意</h3><p>给定一个长度为 $n$ 的序列，选求出所有子序列的和，所有子序列可以选择是否乘以 $x$ ，求出其中的最大值。</p>
+<span id="more"></span>
+
+
+
+<h3 id="题目分析"><a href="#题目分析" class="headerlink" title="题目分析"></a>题目分析</h3><p>官方的DP题解没看懂，学习的评论里的一个<a href="https://codeforces.com/contest/1155/submission/53150702">解法</a>。</p>
+<p>由于 $n \le 3 \times 10^5$ ，所以时间复杂度需要控制在 $O(nlogn)$ 。</p>
+<p>此解法时间复杂度为 $O(n)$ 。</p>
+<p>区间问题，考虑使用<strong>前缀和</strong>。</p>
+<p>首先求出 $sum[i]$ ：$a[1 \sim i]$ 的前缀和；$L[i]$ ：以 $i$ 结尾的子序列的最大值；$R[i]$：以 $i$ 开头的子序列的最大值。</p>
+<p>若将 $[l,r]$ 区间扩大 $x$ 倍：</p>
+<ul>
+<li>答案为：$L[l - 1] + x \times (sum[r] - sum[l - 1]) + R[r + 1]$ 。</li>
+<li>可写为：$(R[r + 1] + x \times sum[r]) + (L[l-1] - x \times sum[l-1])$ 。</li>
+</ul>
+<p>那么枚举所有区间即可。</p>
+<p>规定 $(R[r + 1] + x \times sum[r])$ 为第一项，$(L[l-1] - x \times sum[l-1])$ 为第二项。</p>
+<p>所以，做法是枚举 $r$ ，确定第一项，枚举过程中求出第二项的最大值。</p>
+<hr>
+<p>下面分析一下关键代码：</p>
+<figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line">LL res = <span class="number">0</span>, best = <span class="number">0</span>;</span><br><span class="line"><span class="keyword">for</span> (<span class="type">int</span> i = <span class="number">1</span>; i &lt;= n; i ++ ) &#123;</span><br><span class="line">    res = <span class="built_in">max</span>(res, <span class="built_in">max</span>(L[i], x * s[i] + R[i + <span class="number">1</span>] + best));</span><br><span class="line">    best = <span class="built_in">max</span>(best, L[i] - x * s[i]);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>$res$ ：最终答案，$best$ ：第一项的最大值。</p>
+<p>这里需要注意 $res$ 还需要和 $L[i]$ 取一个最大值，因为区间可以不进行扩大 $x$ 倍的操作。</p>
+<h3 id="代码"><a href="#代码" class="headerlink" title="代码"></a>代码</h3><figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;algorithm&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;sstream&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;numeric&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;cstdlib&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;cstring&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;cstdio&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;bitset&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;string&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;stack&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;deque&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;queue&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;cmath&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;set&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;map&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> std;</span><br><span class="line"><span class="keyword">typedef</span> <span class="type">long</span> <span class="type">long</span> LL;</span><br><span class="line"></span><br><span class="line"><span class="type">const</span> <span class="type">int</span> N = <span class="number">3e5</span> + <span class="number">10</span>;</span><br><span class="line"><span class="type">int</span> n;</span><br><span class="line">LL x, a[N], s[N], L[N], R[N];</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="type">void</span> <span class="title">solve</span><span class="params">()</span> </span>&#123;</span><br><span class="line">	cin &gt;&gt; n &gt;&gt; x;</span><br><span class="line">	<span class="keyword">for</span> (<span class="type">int</span> i = <span class="number">1</span>; i &lt;= n; i ++ ) cin &gt;&gt; a[i];</span><br><span class="line">	</span><br><span class="line">	<span class="keyword">for</span> (<span class="type">int</span> i = <span class="number">1</span>; i &lt;= n; i ++ ) s[i] = s[i - <span class="number">1</span>] + a[i];</span><br><span class="line">	LL smin = <span class="number">0</span>;</span><br><span class="line">	<span class="keyword">for</span> (<span class="type">int</span> i = <span class="number">1</span>; i &lt;= n; i ++ ) &#123;</span><br><span class="line">		smin = <span class="built_in">min</span>(smin, s[i]);</span><br><span class="line">		L[i] = <span class="built_in">max</span>(<span class="number">0LL</span>, s[i] - smin);</span><br><span class="line">	&#125;</span><br><span class="line">	LL smax = s[n];</span><br><span class="line">	<span class="keyword">for</span> (<span class="type">int</span> i = n; i &gt;= <span class="number">1</span>; i -- ) &#123;</span><br><span class="line">		smax = <span class="built_in">max</span>(smax, s[i]);</span><br><span class="line">		R[i] = <span class="built_in">max</span>(<span class="number">0LL</span>, smax - s[i - <span class="number">1</span>]);</span><br><span class="line">	&#125;</span><br><span class="line">	LL res = <span class="number">0</span>, best = <span class="number">0</span>;</span><br><span class="line">	<span class="keyword">for</span> (<span class="type">int</span> i = <span class="number">1</span>; i &lt;= n; i ++ ) &#123;</span><br><span class="line">		res = <span class="built_in">max</span>(res, <span class="built_in">max</span>(L[i], x * s[i] + R[i + <span class="number">1</span>] + best));</span><br><span class="line">		best = <span class="built_in">max</span>(best, L[i] - x * s[i]);</span><br><span class="line">	&#125;</span><br><span class="line">	cout &lt;&lt; res &lt;&lt; <span class="string">&#x27;\n&#x27;</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">main</span><span class="params">()</span> </span>&#123;</span><br><span class="line">	ios::<span class="built_in">sync_with_stdio</span>(<span class="number">0</span>), cin.<span class="built_in">tie</span>(<span class="number">0</span>), cout.<span class="built_in">tie</span>(<span class="number">0</span>);</span><br><span class="line">	<span class="built_in">solve</span>();</span><br><span class="line">	<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
 ]]></content>
       <tags>
         <tag>算法</tag>
       </tags>
   </entry>
   <entry>
-    <title>Github搭博客</title>
+    <title>Hexo_Icarus支持latex数学方法</title>
+    <url>/Blog.github.io/2023/05/08/Hexo-Icarus%E6%94%AF%E6%8C%81latex%E6%95%B0%E5%AD%A6%E6%96%B9%E6%B3%95/</url>
+    <content><![CDATA[<p>$Icarus$ 主题默认支持了 $MathJax$ 插件渲染数学公式，只需要修改主题配置文件使能就可以直接使用。</p>
+<p>具体步骤：</p>
+<ol>
+<li>打开配置文件 <code>_config.icarus.yml</code> </li>
+<li><code>Ctrl + F</code> 搜索 <code>mathjax</code> </li>
+<li>将其设置为 <code>true</code></li>
+</ol>
+<p>参考文章：</p>
+<ul>
+<li><a href="https://kysonlok.github.io/2020/06/11/Hexo-Icarus-%E6%94%AF%E6%8C%81Latex%E6%95%B0%E5%AD%A6%E5%85%AC%E5%BC%8F/">Hexo Icarus 支持Latex数学公式</a></li>
+</ul>
+]]></content>
+      <tags>
+        <tag>Hexo</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>使用Github和Hexo搭建静态博客</title>
     <url>/Blog.github.io/2023/03/24/Github%E6%90%AD%E5%8D%9A%E5%AE%A2/</url>
     <content><![CDATA[<h3 id="参考文章"><a href="#参考文章" class="headerlink" title="参考文章"></a>参考文章</h3><blockquote>
 <p><a href="https://zhuanlan.zhihu.com/p/60578464">参考文章1</a></p>
@@ -88,7 +133,28 @@
 
 ]]></content>
       <tags>
-        <tag>博客</tag>
+        <tag>Hexo</tag>
+        <tag>Github</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>修改gitbash字体大小</title>
+    <url>/Blog.github.io/2023/05/08/%E4%BF%AE%E6%94%B9gitbash%E5%AD%97%E4%BD%93%E5%A4%A7%E5%B0%8F/</url>
+    <content><![CDATA[<p>步骤：</p>
+<ol>
+<li>随便打开一个git bush</li>
+<li>鼠标右键顶框，点击 <code>Options...</code></li>
+<li>点击右方的 <code>Text</code></li>
+<li>点击 <code>Font</code> 右边的 <code>select...</code> </li>
+<li>设置合适的字体大小</li>
+</ol>
+<p>参考文章：</p>
+<ul>
+<li><a href="https://blog.csdn.net/u011027547/article/details/121464105">修改git bash字体样式（保姆级图文）</a></li>
+</ul>
+]]></content>
+      <tags>
+        <tag>Git</tag>
       </tags>
   </entry>
   <entry>
@@ -97,5 +163,24 @@
     <content><![CDATA[<p>Test</p>
 <figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> std;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">main</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    <span class="type">int</span> a, b;</span><br><span class="line">    cin &gt;&gt; a &gt;&gt; b;</span><br><span class="line">    cout &lt;&lt; a + b &lt;&lt; endl;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 ]]></content>
+  </entry>
+  <entry>
+    <title>解决gitbush中文乱码问题</title>
+    <url>/Blog.github.io/2023/05/08/%E8%A7%A3%E5%86%B3gitbush%E4%B8%AD%E6%96%87%E4%B9%B1%E7%A0%81%E9%97%AE%E9%A2%98/</url>
+    <content><![CDATA[<p>步骤：</p>
+<ol>
+<li>随便打开一个git bush</li>
+<li>鼠标右键顶框，点击 <code>Options...</code></li>
+<li><code>Locale</code>设置为 <code>zh-CN</code></li>
+<li><code>Character set</code> 设置为 <code>UTF-8</code></li>
+</ol>
+<p>参考文章：</p>
+<ul>
+<li><a href="https://www.cnblogs.com/sdlz/p/13023342.html"><a href="https://www.cnblogs.com/sdlz/p/13023342.html">Git Bash终端中文输出显示乱码解决方案 </a></a></li>
+</ul>
+]]></content>
+      <tags>
+        <tag>Git</tag>
+      </tags>
   </entry>
 </search>
