@@ -36,25 +36,6 @@
       </tags>
   </entry>
   <entry>
-    <title>Hexo_Icarus支持latex数学方法</title>
-    <url>/Blog.github.io/2023/05/08/Hexo-Icarus%E6%94%AF%E6%8C%81latex%E6%95%B0%E5%AD%A6%E6%96%B9%E6%B3%95/</url>
-    <content><![CDATA[<p>$Icarus$ 主题默认支持了 $MathJax$ 插件渲染数学公式，只需要修改主题配置文件使能就可以直接使用。</p>
-<p>具体步骤：</p>
-<ol>
-<li>打开配置文件 <code>_config.icarus.yml</code> </li>
-<li><code>Ctrl + F</code> 搜索 <code>mathjax</code> </li>
-<li>将其设置为 <code>true</code></li>
-</ol>
-<p>参考文章：</p>
-<ul>
-<li><a href="https://kysonlok.github.io/2020/06/11/Hexo-Icarus-%E6%94%AF%E6%8C%81Latex%E6%95%B0%E5%AD%A6%E5%85%AC%E5%BC%8F/">Hexo Icarus 支持Latex数学公式</a></li>
-</ul>
-]]></content>
-      <tags>
-        <tag>Hexo</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>使用Github和Hexo搭建静态博客</title>
     <url>/Blog.github.io/2023/03/24/Github%E6%90%AD%E5%8D%9A%E5%AE%A2/</url>
     <content><![CDATA[<h3 id="参考文章"><a href="#参考文章" class="headerlink" title="参考文章"></a>参考文章</h3><blockquote>
@@ -138,6 +119,32 @@
       </tags>
   </entry>
   <entry>
+    <title>Hexo_Icarus支持latex数学方法</title>
+    <url>/Blog.github.io/2023/05/08/Hexo-Icarus%E6%94%AF%E6%8C%81latex%E6%95%B0%E5%AD%A6%E6%96%B9%E6%B3%95/</url>
+    <content><![CDATA[<p>$Icarus$ 主题默认支持了 $MathJax$ 插件渲染数学公式，只需要修改主题配置文件使能就可以直接使用。</p>
+<p>具体步骤：</p>
+<ol>
+<li>打开配置文件 <code>_config.icarus.yml</code> </li>
+<li><code>Ctrl + F</code> 搜索 <code>mathjax</code> </li>
+<li>将其设置为 <code>true</code></li>
+</ol>
+<p>参考文章：</p>
+<ul>
+<li><a href="https://kysonlok.github.io/2020/06/11/Hexo-Icarus-%E6%94%AF%E6%8C%81Latex%E6%95%B0%E5%AD%A6%E5%85%AC%E5%BC%8F/">Hexo Icarus 支持Latex数学公式</a></li>
+</ul>
+]]></content>
+      <tags>
+        <tag>Hexo</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Hello World</title>
+    <url>/Blog.github.io/2023/03/24/hello-world/</url>
+    <content><![CDATA[<p>Test</p>
+<figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> std;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">main</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    <span class="type">int</span> a, b;</span><br><span class="line">    cin &gt;&gt; a &gt;&gt; b;</span><br><span class="line">    cout &lt;&lt; a + b &lt;&lt; endl;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+]]></content>
+  </entry>
+  <entry>
     <title>修改gitbash字体大小</title>
     <url>/Blog.github.io/2023/05/08/%E4%BF%AE%E6%94%B9gitbash%E5%AD%97%E4%BD%93%E5%A4%A7%E5%B0%8F/</url>
     <content><![CDATA[<p>步骤：</p>
@@ -156,13 +163,6 @@
       <tags>
         <tag>Git</tag>
       </tags>
-  </entry>
-  <entry>
-    <title>Hello World</title>
-    <url>/Blog.github.io/2023/03/24/hello-world/</url>
-    <content><![CDATA[<p>Test</p>
-<figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> std;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">main</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    <span class="type">int</span> a, b;</span><br><span class="line">    cin &gt;&gt; a &gt;&gt; b;</span><br><span class="line">    cout &lt;&lt; a + b &lt;&lt; endl;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-]]></content>
   </entry>
   <entry>
     <title>解决gitbush中文乱码问题</title>
