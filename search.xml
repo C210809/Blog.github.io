@@ -165,8 +165,8 @@
       </tags>
   </entry>
   <entry>
-    <title>解决gitbush中文乱码问题</title>
-    <url>/Blog.github.io/2023/05/08/%E8%A7%A3%E5%86%B3gitbush%E4%B8%AD%E6%96%87%E4%B9%B1%E7%A0%81%E9%97%AE%E9%A2%98/</url>
+    <title>解决gitbash中文乱码问题</title>
+    <url>/Blog.github.io/2023/05/08/%E8%A7%A3%E5%86%B3gitbash%E4%B8%AD%E6%96%87%E4%B9%B1%E7%A0%81%E9%97%AE%E9%A2%98/</url>
     <content><![CDATA[<p>步骤：</p>
 <ol>
 <li>随便打开一个git bash</li>
