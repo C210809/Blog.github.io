@@ -141,6 +141,26 @@
       </tags>
   </entry>
   <entry>
+    <title>Hexo使用自定义模板创建文章</title>
+    <url>/Blog.github.io/2023/05/12/Hexo%E4%BD%BF%E7%94%A8%E8%87%AA%E5%AE%9A%E4%B9%89%E6%A8%A1%E6%9D%BF%E5%88%9B%E5%BB%BA%E6%96%87%E7%AB%A0/</url>
+    <content><![CDATA[<h3 id="原因"><a href="#原因" class="headerlink" title="原因"></a><strong>原因</strong></h3><p>每次写题解都要写一些重复的东西，于是学习了一下如何自定义模板。</p>
+<span id="more"></span>
+
+
+
+<h3 id="具体步骤"><a href="#具体步骤" class="headerlink" title="具体步骤"></a><strong>具体步骤</strong></h3><ol>
+<li>进入<code>scaffolds</code>文件夹</li>
+<li>创建模板<code>t</code></li>
+<li>添加属性<code>layout: t</code></li>
+<li>可以使用<code>hexo new t &quot;article_name&quot;</code>来创建文章</li>
+</ol>
+<p>注意：模板名称和<code>layout</code>属性要使用小写字母。</p>
+]]></content>
+      <tags>
+        <tag>Hexo</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>Hexo_Icarus支持latex数学方法</title>
     <url>/Blog.github.io/2023/05/08/Hexo-Icarus%E6%94%AF%E6%8C%81latex%E6%95%B0%E5%AD%A6%E6%96%B9%E6%B3%95/</url>
     <content><![CDATA[<p>$Icarus$ 主题默认支持了 $MathJax$ 插件渲染数学公式，只需要修改主题配置文件使能就可以直接使用。</p>
@@ -160,24 +180,11 @@
       </tags>
   </entry>
   <entry>
-    <title>Hexo使用自定义模板创建文章</title>
-    <url>/Blog.github.io/2023/05/12/Hexo%E4%BD%BF%E7%94%A8%E8%87%AA%E5%AE%9A%E4%B9%89%E6%A8%A1%E6%9D%BF%E5%88%9B%E5%BB%BA%E6%96%87%E7%AB%A0/</url>
-    <content><![CDATA[<h3 id="原因"><a href="#原因" class="headerlink" title="原因"></a><strong>原因</strong></h3><p>每次写题解都要写一些重复的东西，于是学习了一下如何自定义模板。</p>
-<span id="more"></span>
-
-
-
-<h3 id="具体步骤"><a href="#具体步骤" class="headerlink" title="具体步骤"></a><strong>具体步骤</strong></h3><ol>
-<li>进入<code>scaffolds</code>文件夹</li>
-<li>创建模板<code>t</code></li>
-<li>添加属性<code>layout: t</code></li>
-<li>可以使用<code>hexo new t &quot;article_name&quot;</code>来创建文章</li>
-</ol>
-<p>注意：模板名称和<code>layout</code>属性要使用小写字母。</p>
+    <title>Hello World</title>
+    <url>/Blog.github.io/2023/03/24/hello-world/</url>
+    <content><![CDATA[<p>Test</p>
+<figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> std;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">main</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    <span class="type">int</span> a, b;</span><br><span class="line">    cin &gt;&gt; a &gt;&gt; b;</span><br><span class="line">    cout &lt;&lt; a + b &lt;&lt; endl;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 ]]></content>
-      <tags>
-        <tag>Hexo</tag>
-      </tags>
   </entry>
   <entry>
     <title>manacher算法模板题</title>
@@ -234,11 +241,18 @@
       </tags>
   </entry>
   <entry>
-    <title>Hello World</title>
-    <url>/Blog.github.io/2023/03/24/hello-world/</url>
-    <content><![CDATA[<p>Test</p>
-<figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> std;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">main</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    <span class="type">int</span> a, b;</span><br><span class="line">    cin &gt;&gt; a &gt;&gt; b;</span><br><span class="line">    cout &lt;&lt; a + b &lt;&lt; endl;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+    <title>对拍</title>
+    <url>/Blog.github.io/2023/05/13/%E5%AF%B9%E6%8B%8D/</url>
+    <content><![CDATA[<p>对拍器写法：</p>
+<p><code>system(&quot;fc myout.txt stdout.txt&quot;)</code> ，如果文件内容相同返回 <code>0</code>，如果不同返回非 <code>0</code> 值。</p>
+<figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;bits/stdc++.h&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> std;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="type">void</span> <span class="title">generate_data</span><span class="params">()</span> </span>&#123;</span><br><span class="line">	<span class="function">ofstream <span class="title">fout</span><span class="params">(<span class="string">&quot;input.txt&quot;</span>)</span></span>;</span><br><span class="line">	fout &lt;&lt; <span class="number">1</span> &lt;&lt; endl;</span><br><span class="line">	<span class="type">int</span> a = <span class="built_in">rand</span>() % <span class="number">10</span> + <span class="number">1</span>, b = <span class="built_in">rand</span>() % <span class="number">18</span> + <span class="number">1</span>;</span><br><span class="line">	fout &lt;&lt; a &lt;&lt; <span class="string">&quot;^&quot;</span> &lt;&lt; <span class="string">&quot;&#123;&quot;</span> &lt;&lt; b &lt;&lt; <span class="string">&quot;&#125;&quot;</span> &lt;&lt; endl;</span><br><span class="line">	cout &lt;&lt; a &lt;&lt; <span class="string">&#x27; &#x27;</span> &lt;&lt; b &lt;&lt; endl;</span><br><span class="line">	fout.<span class="built_in">close</span>();</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">main</span><span class="params">()</span> </span>&#123;</span><br><span class="line">	<span class="built_in">srand</span>(<span class="built_in">time</span>(<span class="number">0</span>));</span><br><span class="line">	<span class="keyword">for</span> (<span class="type">int</span> i = <span class="number">0</span>; i &lt; <span class="number">1000</span>; i ++ )  &#123;</span><br><span class="line">		<span class="built_in">printf</span>(<span class="string">&quot;iteration: %d\n&quot;</span>, i);</span><br><span class="line">		<span class="built_in">generate_data</span>();</span><br><span class="line">		<span class="built_in">system</span>(<span class="string">&quot;my.exe &lt; input.txt &gt; myout.txt&quot;</span>);</span><br><span class="line">		<span class="built_in">system</span>(<span class="string">&quot;std.exe &lt; input.txt &gt; stdout.txt&quot;</span>);</span><br><span class="line">		<span class="keyword">if</span> (<span class="built_in">system</span>(<span class="string">&quot;fc myout.txt stdout.txt&quot;</span>))</span><br><span class="line">        &#123;</span><br><span class="line">            <span class="built_in">puts</span>(<span class="string">&quot;错啦!&quot;</span>);</span><br><span class="line">            <span class="keyword">break</span>;</span><br><span class="line">        &#125;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+
+
 ]]></content>
+      <tags>
+        <tag>对拍</tag>
+      </tags>
   </entry>
   <entry>
     <title>解决gitbash中文乱码问题</title>
