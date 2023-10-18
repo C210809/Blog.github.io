@@ -141,43 +141,42 @@
       </tags>
   </entry>
   <entry>
-    <title>Hexo_Icarus支持latex数学方法</title>
-    <url>/Blog.github.io/2023/05/08/Hexo-Icarus%E6%94%AF%E6%8C%81latex%E6%95%B0%E5%AD%A6%E6%96%B9%E6%B3%95/</url>
-    <content><![CDATA[<p>$Icarus$ 主题默认支持了 $MathJax$ 插件渲染数学公式，只需要修改主题配置文件使能就可以直接使用。</p>
-<p>具体步骤：</p>
-<ol>
-<li>打开配置文件 <code>_config.icarus.yml</code> </li>
-<li><code>Ctrl + F</code> 搜索 <code>mathjax</code> </li>
-<li>将其设置为 <code>true</code></li>
+    <title></title>
+    <url>/Blog.github.io/2023/10/18/Typora%E9%85%8D%E7%BD%AE%E5%9B%BE%E5%BA%8A/</url>
+    <content><![CDATA[<h4 id="安装-PicGo-Core-command-line"><a href="#安装-PicGo-Core-command-line" class="headerlink" title="安装 PicGo-Core(command line)"></a>安装 <code>PicGo-Core(command line)</code></h4><ol>
+<li>打开 <code>Typora</code> ，点击左上角文件，再点击偏好设置，（或者使用快捷键<code>Crtl + ,</code>），再点击左侧图像，上传服务选择 <code>PicGo-Core(command line)</code> 。</li>
 </ol>
-<p>参考文章：</p>
-<ul>
-<li><a href="https://kysonlok.github.io/2020/06/11/Hexo-Icarus-%E6%94%AF%E6%8C%81Latex%E6%95%B0%E5%AD%A6%E5%85%AC%E5%BC%8F/">Hexo Icarus 支持Latex数学公式</a></li>
-</ul>
+<p><img src="https://s2.loli.net/2023/10/18/FdvnyzWlXpV32OH.png" alt="image-20231018153332174"></p>
+<p>然后点击 <code>打开配置文件</code> 。</p>
+<p>我的电脑没有反应。</p>
+<p>但配置文件是在 <code>.picgo</code> 的 <code>config.json</code> 文件中，用 Everything 搜索一下就行。</p>
+<p><img src="https://s2.loli.net/2023/10/18/LJSrukVCZcBYqb7.png" alt="image-20231018153553129"></p>
+<p>打开 <code>config.json</code>。</p>
+<p><img src="https://s2.loli.net/2023/10/18/Lf2K7CwNgumU1bY.png" alt="image-20231018153713352"></p>
+<p>配置文件内容如下：</p>
+<figure class="highlight json"><table><tr><td class="code"><pre><span class="line"><span class="punctuation">&#123;</span></span><br><span class="line">  <span class="attr">&quot;picBed&quot;</span><span class="punctuation">:</span> <span class="punctuation">&#123;</span></span><br><span class="line">    <span class="attr">&quot;uploder&quot;</span><span class="punctuation">:</span> <span class="string">&quot;smms&quot;</span><span class="punctuation">,</span></span><br><span class="line"> <span class="attr">&quot;smms&quot;</span><span class="punctuation">:</span><span class="punctuation">&#123;</span></span><br><span class="line">   <span class="attr">&quot;token&quot;</span><span class="punctuation">:</span><span class="string">&quot;自己的token&quot;</span></span><br><span class="line"> <span class="punctuation">&#125;</span></span><br><span class="line">  <span class="punctuation">&#125;</span><span class="punctuation">,</span></span><br><span class="line">  <span class="attr">&quot;picgoPlugins&quot;</span><span class="punctuation">:</span> <span class="punctuation">&#123;</span><span class="punctuation">&#125;</span></span><br><span class="line"><span class="punctuation">&#125;</span></span><br></pre></td></tr></table></figure>
+
+<h4 id="注册图床网站"><a href="#注册图床网站" class="headerlink" title="注册图床网站"></a>注册图床网站</h4><p>这个<a href="https://sm.ms/">网站</a>。</p>
+<p><img src="https://s2.loli.net/2023/10/18/JXhumecnV182vt4.png" alt="image-20231018154045196"></p>
+<p>免费容量是5GB，对于我来说完全够用了。</p>
+<p>注册完之后选择 <code>API Token</code> ，如下图。</p>
+<p><img src="https://s2.loli.net/2023/10/18/kE6LthMygaz7GKF.png" alt="image-20231018154240041"></p>
+<p>再点击 <code>Generate Secret Token</code> ，如下图。</p>
+<p><img src="https://s2.loli.net/2023/10/18/cB4xI5wlyekVFD8.png" alt="image-20231018154715422"></p>
+<p>然后复制 <code>Secret Token</code> ，粘贴到配置文件的 <code>token</code> 处。</p>
+<h4 id="异常情况"><a href="#异常情况" class="headerlink" title="异常情况"></a>异常情况</h4><ol>
+<li>验证图片上传选项提示Failed。</li>
+</ol>
+<p><img src="https://s2.loli.net/2023/10/18/9fIHUlAPCK2hr8i.png" alt="image-20231018160500931"></p>
+<p>这个不影响使用。</p>
 ]]></content>
-      <tags>
-        <tag>Hexo</tag>
-      </tags>
   </entry>
   <entry>
-    <title>Hexo使用自定义模板创建文章</title>
-    <url>/Blog.github.io/2023/05/12/Hexo%E4%BD%BF%E7%94%A8%E8%87%AA%E5%AE%9A%E4%B9%89%E6%A8%A1%E6%9D%BF%E5%88%9B%E5%BB%BA%E6%96%87%E7%AB%A0/</url>
-    <content><![CDATA[<h3 id="原因"><a href="#原因" class="headerlink" title="原因"></a><strong>原因</strong></h3><p>每次写题解都要写一些重复的东西，于是学习了一下如何自定义模板。</p>
-<span id="more"></span>
-
-
-
-<h3 id="具体步骤"><a href="#具体步骤" class="headerlink" title="具体步骤"></a><strong>具体步骤</strong></h3><ol>
-<li>进入<code>scaffolds</code>文件夹</li>
-<li>创建模板<code>t</code></li>
-<li>添加属性<code>layout: t</code></li>
-<li>可以使用<code>hexo new t &quot;article_name&quot;</code>来创建文章</li>
-</ol>
-<p>注意：模板名称和<code>layout</code>属性要使用小写字母。</p>
+    <title>Hello World</title>
+    <url>/Blog.github.io/2023/03/24/hello-world/</url>
+    <content><![CDATA[<p>Test</p>
+<figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> std;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">main</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    <span class="type">int</span> a, b;</span><br><span class="line">    cin &gt;&gt; a &gt;&gt; b;</span><br><span class="line">    cout &lt;&lt; a + b &lt;&lt; endl;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 ]]></content>
-      <tags>
-        <tag>Hexo</tag>
-      </tags>
   </entry>
   <entry>
     <title>manacher算法模板题</title>
@@ -214,11 +213,63 @@
       </tags>
   </entry>
   <entry>
-    <title>Hello World</title>
-    <url>/Blog.github.io/2023/03/24/hello-world/</url>
-    <content><![CDATA[<p>Test</p>
-<figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> std;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">main</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    <span class="type">int</span> a, b;</span><br><span class="line">    cin &gt;&gt; a &gt;&gt; b;</span><br><span class="line">    cout &lt;&lt; a + b &lt;&lt; endl;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+    <title>Hexo_Icarus支持latex数学方法</title>
+    <url>/Blog.github.io/2023/05/08/Hexo-Icarus%E6%94%AF%E6%8C%81latex%E6%95%B0%E5%AD%A6%E6%96%B9%E6%B3%95/</url>
+    <content><![CDATA[<p>$Icarus$ 主题默认支持了 $MathJax$ 插件渲染数学公式，只需要修改主题配置文件使能就可以直接使用。</p>
+<p>具体步骤：</p>
+<ol>
+<li>打开配置文件 <code>_config.icarus.yml</code> </li>
+<li><code>Ctrl + F</code> 搜索 <code>mathjax</code> </li>
+<li>将其设置为 <code>true</code></li>
+</ol>
+<p>参考文章：</p>
+<ul>
+<li><a href="https://kysonlok.github.io/2020/06/11/Hexo-Icarus-%E6%94%AF%E6%8C%81Latex%E6%95%B0%E5%AD%A6%E5%85%AC%E5%BC%8F/">Hexo Icarus 支持Latex数学公式</a></li>
+</ul>
 ]]></content>
+      <tags>
+        <tag>Hexo</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>修改gitbash字体大小</title>
+    <url>/Blog.github.io/2023/05/08/%E4%BF%AE%E6%94%B9gitbash%E5%AD%97%E4%BD%93%E5%A4%A7%E5%B0%8F/</url>
+    <content><![CDATA[<p>步骤：</p>
+<ol>
+<li>随便打开一个git bash</li>
+<li>鼠标右键顶框，点击 <code>Options...</code></li>
+<li>点击右方的 <code>Text</code></li>
+<li>点击 <code>Font</code> 右边的 <code>select...</code> </li>
+<li>设置合适的字体大小</li>
+</ol>
+<p>参考文章：</p>
+<ul>
+<li><a href="https://blog.csdn.net/u011027547/article/details/121464105">修改git bash字体样式（保姆级图文）</a></li>
+</ul>
+]]></content>
+      <tags>
+        <tag>Git</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Hexo使用自定义模板创建文章</title>
+    <url>/Blog.github.io/2023/05/12/Hexo%E4%BD%BF%E7%94%A8%E8%87%AA%E5%AE%9A%E4%B9%89%E6%A8%A1%E6%9D%BF%E5%88%9B%E5%BB%BA%E6%96%87%E7%AB%A0/</url>
+    <content><![CDATA[<h3 id="原因"><a href="#原因" class="headerlink" title="原因"></a><strong>原因</strong></h3><p>每次写题解都要写一些重复的东西，于是学习了一下如何自定义模板。</p>
+<span id="more"></span>
+
+
+
+<h3 id="具体步骤"><a href="#具体步骤" class="headerlink" title="具体步骤"></a><strong>具体步骤</strong></h3><ol>
+<li>进入<code>scaffolds</code>文件夹</li>
+<li>创建模板<code>t</code></li>
+<li>添加属性<code>layout: t</code></li>
+<li>可以使用<code>hexo new t &quot;article_name&quot;</code>来创建文章</li>
+</ol>
+<p>注意：模板名称和<code>layout</code>属性要使用小写字母。</p>
+]]></content>
+      <tags>
+        <tag>Hexo</tag>
+      </tags>
   </entry>
   <entry>
     <title>对拍</title>
@@ -247,26 +298,6 @@
 <p>参考文章：</p>
 <ul>
 <li><a href="https://www.cnblogs.com/sdlz/p/13023342.html"><a href="https://www.cnblogs.com/sdlz/p/13023342.html">Git Bash终端中文输出显示乱码解决方案 </a></a></li>
-</ul>
-]]></content>
-      <tags>
-        <tag>Git</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>修改gitbash字体大小</title>
-    <url>/Blog.github.io/2023/05/08/%E4%BF%AE%E6%94%B9gitbash%E5%AD%97%E4%BD%93%E5%A4%A7%E5%B0%8F/</url>
-    <content><![CDATA[<p>步骤：</p>
-<ol>
-<li>随便打开一个git bash</li>
-<li>鼠标右键顶框，点击 <code>Options...</code></li>
-<li>点击右方的 <code>Text</code></li>
-<li>点击 <code>Font</code> 右边的 <code>select...</code> </li>
-<li>设置合适的字体大小</li>
-</ol>
-<p>参考文章：</p>
-<ul>
-<li><a href="https://blog.csdn.net/u011027547/article/details/121464105">修改git bash字体样式（保姆级图文）</a></li>
 </ul>
 ]]></content>
       <tags>
